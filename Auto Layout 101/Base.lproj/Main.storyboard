@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,9 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="22i-en-w2K" userLabel="BottomContainer">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="22i-en-w2K" userLabel="BottomContainer">
                                 <rect key="frame" x="0.0" y="540" width="600" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Auto Layout 101 - We ❤ Swift" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dg1-Ba-753" userLabel="TitleLabel">
                                         <rect key="frame" x="14" y="14" width="369.5" height="33.5"/>
@@ -55,6 +56,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="22i-en-w2K" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CxY-RW-BCE"/>
+                            <constraint firstItem="22i-en-w2K" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MsO-Fq-cXs"/>
+                            <constraint firstAttribute="trailing" secondItem="22i-en-w2K" secondAttribute="trailing" constant="-225" id="T7K-MD-76l"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -72,12 +78,43 @@
                     <view key="view" contentMode="scaleToFill" id="Aur-aK-0wt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnS-Pj-Ia5" userLabel="Blue View">
+                                <rect key="frame" x="250" y="0.0" width="125" height="333.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pb2-0E-bkZ" userLabel="Red View">
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="333.5"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J97-Cz-I38" userLabel="Brown View">
+                                <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pb2-0E-bkZ" firstAttribute="top" secondItem="Aur-aK-0wt" secondAttribute="top" id="8bj-ik-brt"/>
+                            <constraint firstItem="J97-Cz-I38" firstAttribute="bottom" secondItem="Aur-aK-0wt" secondAttribute="bottom" id="8zG-Cv-WDv"/>
+                            <constraint firstItem="pb2-0E-bkZ" firstAttribute="leading" secondItem="Aur-aK-0wt" secondAttribute="leading" id="9lF-sW-h9d"/>
+                            <constraint firstItem="cnS-Pj-Ia5" firstAttribute="top" secondItem="Aur-aK-0wt" secondAttribute="top" id="Awe-hk-dGE"/>
+                            <constraint firstItem="J97-Cz-I38" firstAttribute="top" secondItem="Aur-aK-0wt" secondAttribute="centerY" id="K0m-7E-7hd"/>
+                            <constraint firstItem="cnS-Pj-Ia5" firstAttribute="height" secondItem="Aur-aK-0wt" secondAttribute="height" multiplier="1:2" id="O4r-ld-IWh"/>
+                            <constraint firstItem="cnS-Pj-Ia5" firstAttribute="width" secondItem="Aur-aK-0wt" secondAttribute="width" multiplier="1:3" id="R36-nx-zjE"/>
+                            <constraint firstItem="pb2-0E-bkZ" firstAttribute="bottom" secondItem="Aur-aK-0wt" secondAttribute="bottom" multiplier="0.5" id="Yff-2Q-ixD"/>
+                            <constraint firstItem="J97-Cz-I38" firstAttribute="trailing" secondItem="Aur-aK-0wt" secondAttribute="trailing" id="bvF-XQ-GfQ"/>
+                            <constraint firstItem="pb2-0E-bkZ" firstAttribute="width" secondItem="Aur-aK-0wt" secondAttribute="width" multiplier="1:2" id="cPq-XL-fhl"/>
+                            <constraint firstItem="J97-Cz-I38" firstAttribute="leading" secondItem="Aur-aK-0wt" secondAttribute="leading" multiplier="1:2" id="ev0-HC-2Hc"/>
+                            <constraint firstItem="cnS-Pj-Ia5" firstAttribute="trailing" secondItem="Aur-aK-0wt" secondAttribute="trailing" id="k6L-LC-qiH"/>
+                            <constraint firstItem="pb2-0E-bkZ" firstAttribute="width" secondItem="Aur-aK-0wt" secondAttribute="width" multiplier="2:3" id="vQb-I5-xMS"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4F-Di-stL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-423" y="66"/>
+            <point key="canvasLocation" x="-423.19999999999999" y="65.217391304347828"/>
         </scene>
     </scenes>
     <resources>
